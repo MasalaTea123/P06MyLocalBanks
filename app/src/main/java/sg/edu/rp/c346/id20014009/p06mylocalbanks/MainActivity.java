@@ -65,12 +65,15 @@ TextView tvDBS;
         if(wordClicked.equalsIgnoreCase("DBS")){
             if (id==R.id.website) { //check whether the selected menu item ID is 0
                 //code for action
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(("https://www.dbs.com.sg")));
+
+                String website1=getString(R.string.URL1);
+                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse((website1)));
                 startActivity(intent);
                 return true; //menu item successfully handled
             } else if (id==R.id.phonenumber) { //check if the selected menu item ID is 1
                 //code for action
-                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse(("tel:"+"18001111111")));
+                String phone1=getString(R.string.Number1);
+                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse(phone1));
                 startActivity(intent);
                 return true;  //menu item successfully handled
             }
@@ -88,12 +91,15 @@ TextView tvDBS;
         else if(wordClicked.equalsIgnoreCase("OCBC")){
             if (id==R.id.website) { //check whether the selected menu item ID is 0
                 //code for action
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(("https://www.ocbc.com")));
+
+                String website2=getString(R.string.URL2);
+                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse((website2)));
                 startActivity(intent);
                 return true; //menu item successfully handled
             } else if (id==R.id.phonenumber) { //check if the selected menu item ID is 1
                 //code for action
-                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse(("tel:"+"18003633333")));
+                String phone2=getString(R.string.Number2);
+                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse((phone2)));
                 startActivity(intent);
                 return true;  //menu item successfully handled
             }
@@ -111,12 +117,14 @@ TextView tvDBS;
         else if(wordClicked.equalsIgnoreCase("UOB")){
             if (id==R.id.website) { //check whether the selected menu item ID is 0
                 //code for action
-                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse(("https://www.uob.com.sg")));
+                String website3=getString(R.string.URL3);
+                Intent intent=new Intent(Intent.ACTION_VIEW, Uri.parse((website3)));
                 startActivity(intent);
                 return true; //menu item successfully handled
             } else if (id==R.id.phonenumber) { //check if the selected menu item ID is 1
                 //code for action
-                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse(("tel:"+"18002222121")));
+                String phone3=getString(R.string.Number3);
+                Intent intent=new Intent(Intent.ACTION_DIAL, Uri.parse((phone3)));
                 startActivity(intent);
                 return true;  //menu item successfully handled
             }
@@ -145,19 +153,32 @@ TextView tvDBS;
         int id = item.getItemId();
 
         if (id == R.id.EnglishSelection) {
-            tvDBS.setText("DBS");
-            tvOCBC.setText("OCBC");
-            tvUOB.setText("UOB");
+            String bankname1=getString(R.string.dbs);
+            String bankname2=getString(R.string.ocbc);
+            String bankname3=getString(R.string.uob);
+
+
+
+            tvDBS.setText(bankname1);
+            tvOCBC.setText(bankname2);
+            tvUOB.setText(bankname3);
             return true;
         } else if (id == R.id.ChineseSelection) {
-            tvDBS.setText("星展银行");
-            tvOCBC.setText("华侨银行");
-            tvUOB.setText("大华银行");
+            String banknamec1=getString(R.string.bank1chinese);
+            String banknamec2=getString(R.string.bank2chinese);
+            String banknamec3=getString(R.string.bank3chinese);
+
+
+            tvDBS.setText(banknamec1);
+            tvOCBC.setText(banknamec2);
+            tvUOB.setText(banknamec3);
             return true;
         } else {
-            tvDBS.setText("Error translation");
-            tvOCBC.setText("Error translation");
-            tvUOB.setText("Error translation");
+
+            String error=getString(R.string.error);
+            tvDBS.setText(error);
+            tvOCBC.setText(error);
+            tvUOB.setText(error);
         }
 
         return super.onOptionsItemSelected(item);
